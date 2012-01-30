@@ -77,4 +77,7 @@ Locomotive.configure do |config|
   #
   # Note: by default, rack/cache is disabled in the Heroku platform
 
+  # Uncomment this line to direct Locomotive to redirect all requests in the Admin control
+  # panel to https in production.
+  # config.enable_admin_ssl = Rails.env.production?
 end

@@ -9,6 +9,8 @@ module Admin
 
     before_filter :require_site
 
+    before_filter :require_ssl
+
     before_filter :validate_site_membership
 
     load_and_authorize_resource
@@ -55,6 +57,10 @@ module Admin
 
     def require_admin
       authenticate_admin!
+    end
+
+    def require_ssl
+      redirect_to :protocol => 'https://' if Locomotive::Configuration.enable_admin_ssl && !request.ssl?
     end
 
     def begin_of_association_chain
