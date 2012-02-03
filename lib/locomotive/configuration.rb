@@ -76,7 +76,11 @@ module Locomotive
     end
 
     def secure_domain=(setting)
-      self.settings.multi_sites = !!setting
+      if !!setting
+        self.settings.multi_sites do |multi_sites|
+          multi_sites.domain = self.settings.domain
+        end
+      end
       self.settings.secure_domain = setting
     end
 

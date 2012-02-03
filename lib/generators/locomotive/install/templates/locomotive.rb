@@ -81,6 +81,6 @@ Locomotive.configure do |config|
   # panel to https in production.
   # NOTE: If you have a different host for SSL vs non-SSL traffic, multi-sites will be enabled automatically.
   # config.enable_admin_ssl = Rails.env.production?
-  # config.secure_domain = "secure.example.com"
   # config.domain = "example.com"
+  # config.secure_domain = "secure.example.com"
 end
