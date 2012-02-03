@@ -75,6 +75,11 @@ module Locomotive
       end
     end
 
+    def secure_domain=(setting)
+      self.settings.multi_sites = !!setting
+      self.settings.secure_domain = setting
+    end
+
     def method_missing(name, *args, &block)
       self.settings.send(name, *args, &block)
     end

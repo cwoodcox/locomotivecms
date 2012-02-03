@@ -6,6 +6,7 @@ module Admin
     layout '/admin/layouts/box'
 
     before_filter :require_site
+    before_filter :require_ssl, :if => lambda { Locomotive.config.enable_admin_ssl }, :unless => lambda { request.ssl? }
 
     helper 'admin/base', 'admin/box'
 
