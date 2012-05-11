@@ -25,6 +25,10 @@ module Locomotive
           self.collection.last
         end
 
+        def random
+          self.collection.shuffle.first
+        end
+        
         def each(&block)
           self.collection.each(&block)
         end
