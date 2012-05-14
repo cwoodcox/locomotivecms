@@ -37,6 +37,10 @@ module Locomotive
           self.collection.each_with_index(&block)
         end
 
+        def each_shuffled(&block)
+          self.collection.shuffle.each(&block)
+        end
+
         def size
           self.collection.size
         end
